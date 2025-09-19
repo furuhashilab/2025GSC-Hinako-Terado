@@ -1,10 +1,12 @@
 # Pre-thesis project
 
-# 論文再現と応用計画
+# 論文再現に向けた準備と今後の計画
+
+## [9/20発表資料](https://docs.google.com/presentation/d/14tDjXKVV8x3G4FB8lVPOgMfdCh0nsy45RVLAvrSj3JE/edit?usp=sharing)
 
 ## 研究テーマ / 目的
 - Ye & van Nes (2013) の論文を再現し、その分析手法を習得する  
-- 来春までに自分の都市（麻生区）に応用し、卒論に活かす  
+- 来春までに自分の都市？に応用し、卒論に活かす  
 
 ## 背景
 - 新都市 vs 旧都市の成熟度(発展度合)の違いを定量化した先行研究がある  
