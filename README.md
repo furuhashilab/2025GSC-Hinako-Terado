@@ -38,5 +38,4 @@
 - **GitHub**：進捗管理、成果物共有（README, Issues, Project Board）  
 
 ## 参考文献
-- Ye, Y. & van Nes, A. (2013). *Measuring urban maturation processes in Dutch and Chinese new towns: Combining street network configuration with building density and degree of land use diversification through GIS.* **The Journal of Space Syntax**, 4(1), 18–37.  
-  [http://www.journalofspacesyntax.org/](http://www.journalofspacesyntax.org/)  
+- [Ye, Y. & van Nes, A. (2013). *Measuring urban maturation processes in Dutch and Chinese new towns: Combining street network configuration with building density and degree of land use diversification through GIS.* **The Journal of Space Syntax**, 4(1), 18–37.](http://www.journalofspacesyntax.org/)  
