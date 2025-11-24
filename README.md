@@ -1,25 +1,28 @@
-# Pre-thesis project
+# 中間発表
 
-# 論文再現に向けた準備と今後の計画
+## [11/25発表資料](https://docs.google.com/presentation/d/14tDjXKVV8x3G4FB8lVPOgMfdCh0nsy45RVLAvrSj3JE/edit?usp=sharing)
 
-## [9/20発表資料](https://docs.google.com/presentation/d/14tDjXKVV8x3G4FB8lVPOgMfdCh0nsy45RVLAvrSj3JE/edit?usp=sharing)
+## 研究テーマ
+**上麻生エリアにおけるSpace Syntax(DepthmapX) を用いた都市構造分析**
 
-## 研究テーマ / 目的
-- Ye & van Nes (2013) の論文を再現し、その分析手法を習得する  
-- 来春までに自分の都市？に応用し、卒論に活かす  
+## 目的
+- 都市空間の“Visibility Graphs Analysis(可視性分析), Axial Map(最長視線), Segment Analysis”を測り、上麻生の空間構造を理解する。
+-  **DepthmapX**基礎操作の習得を目指す
+- 応用研究テーマ未定 
 
 ## 背景
-- 新都市 vs 旧都市の成熟度(発展度合)の違いを定量化した先行研究がある  
-- まずは論文を完全に再現することで、自分の研究に必要な分析力を身につける  
+- Ye & van Nes (2013) の論文( 新都市 vs 旧都市の成熟度(発展度合)の違いを定量化した先行研究)を再現し、その分析手法の習得を目指す
+- Space Syntaxが成熟度研究の重要な解析であるため、DepthmapXが使用可能かどうか、操作方法の理解を優先する必要があった  
 
 ## 研究の流れ（ロードマップ）
-1. **データ収集**  
-   - OSM道路、建物、用途データを取得  
-2. **Space Syntax解析(街路統合度)⇒DepthmapX**  
-3. **Spacematrix（建物密度）とMXI（土地利用多様性）⇒QGISで計算**  
-4. **150mグリッドに統合**  
-5. **Match Rate計算と可視化**  
-6. **自分の都市（麻生区）に応用**
+1. データの準備とエクスポート(QGIS/Quick OSM)
+2. 空間解析の実行(DepthmapX)
+   - 建物データを用いた空間解析
+   - 道路データを用いた空間解析
+3. 解析結果の可視化と解釈(QGIS)
+
+[Tutorial Manual](https://www.notion.so/Tutorial-2b4ad1d01b29800395c4d8d7ac594856?source=copy_link)
+
 
 ## スケジュール（目標時期）
 - **10月末**：Lelystadで流れを一度通す  （1~4の流れ）
