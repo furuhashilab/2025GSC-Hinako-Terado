@@ -1,6 +1,6 @@
 # 中間発表
 
-## [11/25発表資料]([https://docs.google.com/presentation/d/14tDjXKVV8x3G4FB8lVPOgMfdCh0nsy45RVLAvrSj3JE/edit?usp=sharing](https://docs.google.com/presentation/d/1UXQNEDKLON1MkX_4vQM7jty1Cu_7F8sw2V-UmEeGDm4/edit?usp=sharing))
+## [11/25発表資料](https://docs.google.com/presentation/d/1UXQNEDKLON1MkX_4vQM7jty1Cu_7F8sw2V-UmEeGDm4/edit?usp=sharing)　
 
 ## 研究テーマ
 **上麻生エリアにおけるSpace Syntax(DepthmapX) を用いた都市構造分析**
