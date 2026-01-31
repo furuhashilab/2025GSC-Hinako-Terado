@@ -102,6 +102,11 @@ Space Syntax によって得られる道路セグメントの統合度（integra
 ## D. Discussion（解釈・先行研究との接続・限界）後日
 
 ## C. Conclusion　後日
+15分徒歩圏内に含まれる道路ネットワークの総延長は 122.8 km であった。
+integration上位20%に該当する道路は、延長ベースで約31%を占めた。一方、平均勾配8%以下の道路は約43%であった。
+
+しかし、両条件を同時に満たす「高統合かつ低勾配」の道路延長は全体の約17%にとどまった。
+これは、空間構造上の中心性が高い道路の多くが、地形条件を考慮すると歩行上の主要軸としては機能しにくいことを示している。
 
 ## 参考文献
 [スプレッドシート](https://docs.google.com/spreadsheets/d/1nChMwKFnJzQXkSuZJ_dy5F6gb_bOcy8pdQ2w1clkZ1s/edit?usp=sharing)
