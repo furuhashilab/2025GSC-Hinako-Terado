@@ -1,42 +1,94 @@
-# 中間発表
+## I. Introduction（背景・問い・位置づけ）
 
-## [11/25発表資料](https://docs.google.com/presentation/d/1UXQNEDKLON1MkX_4vQM7jty1Cu_7F8sw2V-UmEeGDm4/edit?usp=sharing)　
+**背景**
 
-## 研究テーマ
-**上麻生エリアにおけるSpace Syntax(DepthmapX) を用いた都市構造分析**
+- 15分徒歩圏（15-minute city）の議論では「徒歩でアクセスできる範囲」が重要だが、**空間シンタックスの中心性（integration）だけ**だと、丘陵地では**実際の歩きやすさ（勾配負荷）**を取りこぼす。
+- 先行研究は、**勾配を歩行基準で分類**し、**高integrationと低勾配を重ねる**ことで「walkable street network」を抽出している。
 
-## 目的
-- 都市空間の“Visibility Graphs Analysis(可視性分析), Axial Map(最長視線), Segment Analysis”を測り、上麻生の空間構造を理解する。
--  **DepthmapX**基礎操作の習得を目指す
-- 応用研究テーマ未定 
+**研究問**
 
-## 背景
-- Ye & van Nes (2013) の論文( 新都市 vs 旧都市の成熟度(発展度合)の違いを定量化した先行研究)を再現し、その分析手法の習得を目指す
-- Space Syntaxが成熟度研究の重要な解析であるため、DepthmapXが使用可能かどうか、操作方法の理解を優先する必要があった  
+- *15分徒歩圏内で、Space Syntax上の主要軸（integration上位）が、勾配条件によってどれだけ“歩けるネットワーク”として残るか（延長で評価）*
 
-## 研究の流れ（ロードマップ）
-1. データの準備とエクスポート(QGIS/Quick OSM)
-2. 空間解析の実行(DepthmapX)
-   - 建物データを用いた空間解析
-   - 道路データを用いた空間解析
-3. 解析結果の可視化(QGIS)
-4. 解析結果の理解
+**新規性（日本に寄せる）**
 
-[Tutorial Manual](https://www.notion.so/Tutorial-2b4ad1d01b29800395c4d8d7ac594856?source=copy_link)
+- 先行研究はトルコの基準（例：0–4, 4–7…%）で勾配を区分し、低勾配×高integrationを抽出している。
+- 本研究はそれを踏まえつつ、**日本の前提に合わせて「許容勾配＝8%」**を主軸に設定し、15分徒歩圏での“残る骨格”を定量化する（延長で比較）。
 
+---
 
-## 成果
-- QGISとDepthmapXを連携させる技術の習得
-- ３つの主要なSpace Syntax分析の役割の違いをある程度理解
-- 都市成熟度論文（Ye & van Nes）とのつながり
+## M. Methods（データ・手順・指標の定義）
 
+**対象**
 
-## 使用予定ツール
-- **DepthmapX**：Space Syntax解析（Visibility Analysis, Axial Map, Segment Analysisの解析）  
-- **QGIS**： Visibility Analysis(ヒートマップ),  Segment Analysis(セグメントの色分け)の可視化
--  **GitHub**：進捗管理、成果物共有
--  **Notion**: Tutorialのマニュアル化 
+- 新百合ヶ丘駅を中心とする**15分徒歩圏ポリゴン**。
 
-## 参考文献
-- [01 | OSM to QGIS: Open Source Data + Vector Export　~07|](https://youtu.be/1TayyUMyE6U?list=TLGGIYF1EyGEUEwyNDExMjAyNQ) 
-- [Ye, Y. & van Nes, A. (2013). *Measuring urban maturation processes in Dutch and Chinese new towns: Combining street network configuration with building density and degree of land use diversification through GIS.* **The Journal of Space Syntax**, 4(1), 18–37.](http://www.journalofspacesyntax.org/)  
+**データ**
+
+- segment_map（道路セグメント）
+    - 属性：integration（＋choiceがあれば後で拡張可）
+- DEM由来の slope（% と度）
+    - 本解析は **平均勾配（mean_slope%）を主**、最大勾配は補助。
+
+**処理フロー**
+
+1. segment_map を15分徒歩圏でクリップ
+2. slope ラスタから segment_map 各線へ **平均勾配（mean_slope%）**を付与（結合まで完了済み、という説明でOK）
+3. 閾値設定
+    - **高integration：上位20%（integration ≥ 1392.4888）**
+    - **低勾配：mean_slope% ≤ 8%（許容、中心）**
+    - **低勾配：mean_slope% ≤ 5%（快適）**
+4. オーバーレイ（AND抽出）
+    - 「高integration（≥1392.4888）かつ低勾配（≤8.1%）」を重ねてwalkableを抽出。
+5. 評価：**延長（m or km）**で比較（件数ではなく長さ）
+
+**4パターン**
+
+- P1：integration上位20%（構造のみ）
+- P2：mean_slope% ≤ 8%（地形のみ）
+- P3：P1 ∩ P2（本命：歩ける中心軸）
+- P4：P1 ∩（mean_slope% > 8%）（対照：中心軸だが坂が障壁）
+
+**データの内訳**
+
+- Integration
+    - 等量分類
+    
+    | 区分 | 意味 |
+    | --- | --- |
+    | Very high | 上位20% |
+    | High | 60–80% |
+    | Medium | 40–60% |
+    | Low | 20–40% |
+    | Very low | 下位20% |
+- Slope
+    - 
+    - 日本ver （勾配凡例）
+        - **0–1%**：ほぼ平坦
+        - **1–5%**：バリアフリー的に「望ましい」側（5%が節目）
+        - **5–8%**：「やむを得ない」許容側（8%が節目）
+        - **8–12%**：基準超（1/8=12.5%は別文脈で出るので上限目安にしやすい）
+        - **>12%**：急（多くの人が回避・負担）
+            
+            https://www.mlit.go.jp/road/sign/kijyun/pdf/20050203hodou.pdf
+            
+
+---
+
+## R. Results
+
+**表1（延長で比較）** 
+
+- 総延長（15分圏内）：L_total = 122.759 km
+- P1延長：L_P1 = 38.948 km（= 31 % of L_total）
+- P2延長：L_P2 = 53.124 km（= 43 %）
+- **P3延長：L_P3 = 21.360 km（= 17 %）** ←主結果
+- P4延長：L_P4 = 17.587 km（= 14 %）
+
+**図（最低2枚）後日**
+
+- 図A：P1（integration上位）とP3（高integration×低勾配）の比較マップ
+- 図B：P4（高integration×高勾配）＝“地形が効いているボトルネック”マップ
+
+## D. Discussion（解釈・先行研究との接続・限界）後日
+
+## C. Conclusion　後日
