@@ -86,7 +86,7 @@ Space Syntax によって得られる道路セグメントの統合度（integra
 
 ## R. Results
 
-**表1（延長で比較）** 
+**表1** 
 
 - 総延長（15分圏内）：L_total = 122.759 km
 - P1延長：L_P1 = 38.948 km（= 31 % of L_total）
@@ -94,10 +94,12 @@ Space Syntax によって得られる道路セグメントの統合度（integra
 - **P3延長：L_P3 = 21.360 km（= 17 %）** ←主結果
 - P4延長：L_P4 = 17.587 km（= 14 %）
 
-**図（最低2枚）後日**
+**図**
 
-- 図A：P1（integration上位）とP3（高integration×低勾配）の比較マップ
-- 図B：P4（高integration×高勾配）＝“地形が効いているボトルネック”マップ
+- P1（integration上位<img width="1920" height="1200" alt="スクリーンショット (64)" src="https://github.com/user-attachments/assets/104efd0b-a8bf-49bd-84c5-798c3cc835d3" />）
+- P3（高integration×低勾配）の比較マップ<img width="1920" height="1200" alt="スクリーンショット (65)" src="https://github.com/user-attachments/assets/9d868bc3-e1a4-4cc3-bec5-b5254c0af2e3" />
+- 図B：P4（高integration×高勾配）<img width="1920" height="1200" alt="スクリーンショット (66)" src="https://github.com/user-attachments/assets/2a82f29c-56a3-40a8-90c3-b4b7fc6ab193" />
+
 
 ## D. Discussion（解釈・先行研究との接続・限界）後日
 
